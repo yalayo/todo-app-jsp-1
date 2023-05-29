@@ -1,5 +1,5 @@
 compile = "javac -classpath .:target/dependency/* -d . $(find . -type f -name '*.java')"
-run = "java -classpath .:target/dependency/* Main"
+run = "mvn tomcat7:run"
 entrypoint = "Main.java"
 hidden = ["**/*.class"]
 
@@ -20,6 +20,11 @@ language = "java"
 
 [nix]
 channel = "stable-22_11"
+
+[env]
+XDG_CONFIG_HOME = "/home/runner/.config"
+BIND_ADDRESS = "0.0.0.0"
+PORT = "3000"
 
 [debugger]
 support = true
