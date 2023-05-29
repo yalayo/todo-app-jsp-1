@@ -68,6 +68,12 @@
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
+				<configuration>
+					<port>3000</port>
+					<address>0.0.0.0</address>
+					<path>/</path>
+					<warFile>target/todo-app.war</warFile>
+				</configuration>
       </plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
