@@ -1,4 +1,3 @@
-compile = "javac -classpath .:target/dependency/* -d . $(find . -type f -name '*.java')"
 run = "mvn tomcat7:run"
 entrypoint = "Main.java"
 hidden = ["**/*.class"]
