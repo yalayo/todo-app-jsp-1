@@ -8,22 +8,18 @@ import java.time.LocalDate;
 
 public class JDBCUtils {
 
-	private static String jdbcURL = "jdbc:mysql://localhost:3306/todo_management";
-	private static String jdbcUsername = "root";
-	private static String jdbcPassword = "root";
+	private static String jdbcURL = System.getenv("JDBC_URL");
+	private static String jdbcUsername = System.getenv("JDBC_USERNAME");
+	private static String jdbcPassword = System.getenv("JDBC_PASSWORD");
 
 	public static Connection getConnection() {
 		Connection connection = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
 			connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} 
+		
 		return connection;
 	}
 
